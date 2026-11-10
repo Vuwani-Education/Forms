@@ -1,0 +1,281 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;;
+    background-color: aliceblue;
+}
+* {
+    box-sizing: border-box;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, rgb(37, 71, 53) 50%, rgb(255, 255, 255) 50%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 18px;
+}
+.vuwani-logo {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+}
+.vuwani-logo h1 {
+    color: white;
+    font-size: 20px;
+}
+a.beginForm {
+    color: white;
+}
+a.endForm {
+    color: rgb(7, 114, 100);
+}
+
+.afm-logo {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+}
+.afm-logo h1 {
+    color:rgb(7, 114, 100);
+    font-size: 20px;
+}
+/* The information section*/
+.intro-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3px;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(37, 71, 53);
+}
+.event-header {
+    text-align: center;
+    color: white;
+}
+.event-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5px;
+    width: 100%;
+    justify-content: center;
+    padding-left: 190px;
+    padding-right: 0px;
+    color: white;
+}
+/*-----The gallery section*/
+.gallery-section {
+    margin-bottom: 60px;
+    background-color: lightgray;
+    padding: 20px;
+    padding-bottom: 30px;
+    justify-content: center;
+    
+}
+.gallery-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color:rgb(37, 71, 53);
+    padding-bottom: 30px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    
+}
+.gallery-card {
+    background-color: azure;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 360px;
+}
+.image-container {
+    height: auto;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.gallery-card-content {
+    padding: 20px;
+}
+.gallery-card-content h3 {
+    color: rgb(37, 71, 53);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.gallery-card-content p {
+    color: rgb(37, 71, 53);
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.gallery-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+/* Contact form */
+.form-wrapper,
+.form-wrapper * {
+    box-sizing: border-box;
+}
+
+.form-wrapper {
+    width: min(100% - 2rem, 42rem);
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid #d6c9a5;
+    border-radius: 0.75rem;
+    background-color: #fffdf7;
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 10%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+.form-wrapper h1 {
+    margin: 0 0 0.5rem;
+    color: #254735;
+}
+
+.form-wrapper .subtitle {
+    margin: 0 0 1.5rem;
+    color: #555;
+}
+
+.form-row {
+    margin: 0;
+    padding: 1.5rem;
+    border: 1px solid #c9b77d;
+    border-radius: 0.5rem;
+   
+}
+
+.form-row legend {
+    padding: 0 0.5rem;
+    color: #254735;
+    font-weight: 700;
+}
+
+.form-row label {
+    display: block;
+    margin: 1rem 0 0.4rem;
+    color: #26352c;
+    font-weight: 600;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #aaa;
+    border-radius: 0.35rem;
+    background-color: #fff;
+    color: #222;
+    font: inherit;
+}
+
+.form-row input[type="radio"] {
+    display: inline-block;
+    width: auto;
+    margin: 0 0.35rem 0 0;
+    padding: 0;
+    vertical-align: middle;
+    accent-color: #254735;
+}
+
+.form-row label[for="student-yes"],
+.form-row label[for="student-no"] {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    vertical-align: middle;
+}
+
+.form-row textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.form-actions button {
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #254735;
+    border-radius: 0.35rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.submit-button {
+    background-color: #254735;
+    color: #fff;
+}
+
+.reset-button {
+    background-color: #fffdf7;
+    color: #254735;
+}
+
+.submit-button:hover {
+    background-color: #1b3527;
+}
+
+.reset-button:hover {
+    background-color: #f0e5c4;
+}
+
+.form-actions button:focus-visible {
+    outline: 3px solid #c9b77d;
+    outline-offset: 3px;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    border-color: #254735;
+    outline: 2px solid #254735;
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .form-wrapper {
+        margin: 1.5rem auto;
+        padding: 1.25rem;
+    }
+
+    .form-row {
+        padding: 1rem;
+    }
+}

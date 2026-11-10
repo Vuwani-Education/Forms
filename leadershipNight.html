@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuwani & AFM Mentorship Night</title>
+    <link rel="stylesheet" href="vuwaniForm.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="vuwani-logo">
+            <img src="vuwaniMainLogo.png" alt="Vuwani Education Logo" width="auto" height="80px">
+            <h1>Vuwani Education</h1>
+        </div>
+        <div class="nav-link">
+            <ul>
+                <li><a class="beginForm" href="leadershipNight.html">Leadership & Mentorship</a> <a class="endForm" href="leadershipNight.html">Form</a></li>
+            </ul>
+        </div>
+        <div class="afm-logo">
+            <img src="afmLogo.png" alt="AFM Midrand Restoration Center Logo" width="auto" height="80px">
+            <h1>AFM Midrand Restoration Center</h1>
+        </div>
+    </nav>
+    <main>
+        <section class="intro-section">
+            <h2>Vuwani Education & Apostolic Faith Mission Restoration Center Presents:</h2>
+            <h2><em>Leadership & Mentorship Night</em></h2>
+            <p>We are excited to inform you of our new program happening on the 27th of November. We, Vuwani Education, in partnership with the Apostolic Faith Mission Restoration Center, hosting a leadership and mentorship event for all people - whether students, professionals, or community members.</p>
+        </section>
+        <section class="event-details">
+            <div class="event-header">
+                <h3>Event Details</h3>
+            </div>
+            <div class="event-info">
+                <p><strong>Date:</strong> November 27th, 2026</p>
+                <p><strong>Time:</strong> 8:00 PM - 4:00 AM</p>
+                <p><strong>Venue:</strong> Vuwani Education Clayville (9290 Gelai Cres, Clayville)</p>
+                <p><strong>Price:</strong> R50 Registration Fee</p>
+                
+                <ul><strong>Subjects:</strong>
+                    <li>Rights vs Responsibilities</li>
+                    <li>Substance Abuse and its Consequences</li>
+                    <li>Social Media & Cyber Awareness</li>
+                </ul>
+                
+                <p><strong>Host Speakers:</strong> Mr & Mrs Ngulube</p>
+                <p><strong>Vuwani Speakers:</strong> Andzani Rikhotso & Mr Cardros</p>
+                <p><strong>Guest Speakers:</strong> Mr Lawrence Nyakasoka</p>
+                <P><strong>Guest Singers:</strong> Minister Machie</P>
+            </div>
+        </section>
+        <section class="gallery-section">
+            <h2>Meet the Speakers</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card"> <!---The card for the Ngulubes-->
+                    <div class="image-container">
+                        <img src="ngulube.jpg" alt="Mr and Mrs Ngulube">
+                    </div>
+                    <div class="gallery-card-content">
+                        <h3>Host Speakers</h3>
+                        <p>Mr & Mrs Ngulube</p>
+                        <p><em>The leaders of the Apostolic Faith Mission Midrand Restoration center</em></p>
+                    </div>
+                </div>
+
+                <div class="gallery-card"> <!---The card for the CEO of Vuwani Education-->
+                    <div class="image-container">
+                        <img src="cardros.jpg" alt="Mr Neltovia Cardros, The CEO of Vuwani Education">
+                    </div>
+                    <div class="gallery-card-content">
+                        <h3>Vuwani Education Speaker</h3>
+                        <p>Mr Neltovia Cardros</p>
+                        <p><em>The CEO of Vuwani Education</em></p>
+                    </div>
+                </div>
+
+                <div class="gallery-card"> <!---The card for the Head Lecturer of Vuwani Education-->
+                    <div class="image-container">
+                        <img src="andzani.jpg" alt="Mr Andzani Rikhotso, The Head Lecturer of Vuwani Education">
+                    </div>
+                    <div class="gallery-card-content">
+                        <h3>Vuwani Education Speaker</h3>
+                        <p>Mr Andzani Rikhotso</p>
+                        <p><em>The Head Lecturer of Vuwani Education</em></p>
+                    </div>
+                </div>
+
+                <div class="gallery-card"> <!---The card for the guest speaker Mr Lawrence Nyakasoka-->
+                    <div class="image-container">
+                        <img src="Lawrence.jpg" alt="Mr Lawrence Nyakasoka, The Guest Speaker">
+                    </div>
+                    <div class="gallery-card-content">
+                        <h3>Guest Speaker</h3>
+                        <p>Mr Lawrence Nyakasoka</p>
+                        <p><em>The Guest Speaker</em></p>
+                    </div>
+                </div>
+
+                <div class="gallery-card"> <!---The card for the guest singer Minister Machie-->
+                    <div class="image-container">
+                        <img src="machie.jpg" alt=" Minister Machie, The Guest Singer">
+                    </div>
+                    <div class="gallery-card-content">
+                        <h3>Guest Singer</h3>
+                        <p>Minister Machie</p>
+                        <p><em>The Guest Singer</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="form-wrapper">
+            <h1>Leadership & Mentorship Registration Form</h1>
+            <p>Please fill out the form below to register for the event.</p>
+            <form id="registrationForm">
+                <fieldset class="form-row">
+                    <legend>Event Details</legend>
+                    <label for="attendance">Will you be attending?</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </fieldset>
+                <div class="if-attending" hidden>
+                    <fieldset class="form-row">
+                    
+                        <legend>Personal Information</legend>
+                        <label for="name">First and Second Names:</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name here...">
+                        <label for="surname">Surname:</label>
+                        <input type="text" id="surname" name="surname" required placeholder="Enter your surname here...">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email here...">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+27 123 456 7890">
+                        
+                        <label for="student">Are you a student?</label>
+                        <input type="radio" id="student-yes" name="student" value="yes" required>
+                        <label for="student-yes">Yes</label>
+                        <input type="radio" id="student-no" name="student" value="no" required>
+                        <label for="student-no">No</label>
+                    
+
+                        <div class="if-student" hidden>
+                            <label for="schoolname">School Name</label>
+                            <input type="text" id="schoolname" name="schoolname" required placeholder="Enter your school name here...">
+                            <label for="grade">Grade</label>
+                            <select id="grade" name="grade" required>
+                                <option value="">Select your grade</option>
+                                <option value="grade-1">Grade 1</option>
+                                <option value="grade-2">Grade 2</option>
+                                <option value="grade-3">Grade 3</option>
+                                <option value="grade-4">Grade 4</option>
+                                <option value="grade-5">Grade 5</option>
+                                <option value="grade-6">Grade 6</option>
+                                <option value="grade-7">Grade 7</option>
+                                <option value="grade-8">Grade 8</option>
+                                <option value="grade-9">Grade 9</option>
+                                <option value="grade-10">Grade 10</option>
+                                <option value="grade-11">Grade 11</option>
+                                <option value="grade-12">Grade 12</option>
+                                <option value="uni">University</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    
+                </div>
+                <div id="formMessage" role="status" aria-live="polite"></div> 
+                <div class="form-actions">
+                    <button class="submit-button" type="submit">Submit</button>
+                    <button class="reset-button" type="reset">Clear Form</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="vuwaniForm.js"></script>
+</body>
+</html>
