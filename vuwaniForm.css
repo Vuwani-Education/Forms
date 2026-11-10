@@ -8,8 +8,9 @@ body {
     box-sizing: border-box;
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content:space-evenly;
     background-image: linear-gradient(to right, rgb(37, 71, 53) 50%, rgb(255, 255, 255) 50%);
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 100%;
@@ -26,7 +27,19 @@ body {
 
 .navbar a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
+}
+.nav-link a {
+    display: inline-block;
+    padding: 0.55rem 0.85rem;
+    border: 2px solid white;
+    border-radius: 0.35rem;
+    background-color: #254735;
+    color: white;
+    font-weight: 700;
+}
+.nav-link a:hover {
+    background-color: #1b3527;
 }
 .vuwani-logo {
     display: flex;
@@ -38,18 +51,12 @@ body {
     color: white;
     font-size: 20px;
 }
-a.beginForm {
-    color: white;
-}
-a.endForm {
-    color: rgb(7, 114, 100);
-}
-
 .afm-logo {
     display: flex;
     gap: 20px;
     padding: 10px;
     align-items: center;
+    justify-self: end;
 }
 .afm-logo h1 {
     color:rgb(7, 114, 100);
@@ -57,6 +64,9 @@ a.endForm {
 }
 /* for the navigation */
 @media screen and (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
     .vuwani-logo {
         gap: 8px;
     }
@@ -64,7 +74,7 @@ a.endForm {
         font-size: 12px;
     }
     .vuwani-logo img {
-        height: 25px;
+        height: 35px;
         width: auto;
     }
     .afm-logo {
@@ -78,13 +88,13 @@ a.endForm {
         width: auto;
     }
     .nav-link a {
-        font-size: 12px;
+        font-size: 14px;
     }
     .nav-link {
         display: flex;
         justify-content: center;
-        width: 100%;
-        padding-left: 30px;
+        flex-basis: 100%;
+        padding: 8px 10px 12px;
     }
 }
 /* for the heading and intro */
@@ -103,6 +113,9 @@ a.endForm {
     padding: 2rem;
     background-color: #f9f9f9;
 }
+.intro-section p {
+    line-height: 1.7;
+}
 .event-details {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -116,25 +129,42 @@ a.endForm {
 }
 .event-info {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 5px;
-    width: 100%;
-    justify-content: center;
-    padding-left: 190px;
-    padding-right: 0px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem 2rem;
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
     color: white;
+}
+.event-item {
+    min-width: 0;
+}
+.event-info dt {
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+.event-info dd {
+    margin: 0;
+}
+.event-info ul {
+    margin: 0;
+    padding-left: 1.2rem;
 }
 /* for the event info section */
 @media screen and (max-width: 900px) {
     .event-info {
-        padding-left: 0;
-        padding: 10px;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 0px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem 1.5rem;
+        padding: 1rem 1.5rem;
     }
-    .event-info p {
+    .event-info dd {
         font-size: 15px;
-        margin: 0.35rem 0;
+    }
+}
+@media screen and (max-width: 560px) {
+    .event-info {
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
 }
 /*-----The gallery section*/
