@@ -55,6 +55,36 @@ a.endForm {
     color:rgb(7, 114, 100);
     font-size: 20px;
 }
+/* for the navigation */
+@media screen and (max-width: 900px) {
+    .vuwani-logo h1 {
+        font-size: 12px;
+    }
+    .vuwani-logo img {
+        height: 45px;
+        width: auto;
+    }
+    .afm-logo h1 {
+        font-size: 12px;
+    }
+    .afm-logo img {
+        height: 45px;
+        width: auto;
+    }
+    .nav-link a {
+        font-size: 12px;
+    }
+}
+/* for the heading and intro */
+@media screen and (max-width: 900px) {
+    .intro-section h2 {
+        font-size: 20px;
+    }
+    .intro-section p {
+        font-size: 15px;
+    }
+}
+
 /* The information section*/
 .intro-section {
     text-align: center;
@@ -82,6 +112,15 @@ a.endForm {
     padding-left: 190px;
     padding-right: 0px;
     color: white;
+}
+/* for the event info section */
+@media screen and (max-width: 900px) {
+    .event-info {
+        padding-left: 0;
+        padding: 10px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0px;
+    }
 }
 /*-----The gallery section*/
 .gallery-section {
