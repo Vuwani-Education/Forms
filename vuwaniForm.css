@@ -94,7 +94,6 @@ a.endForm {
 .event-details {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 3px;
     width: 100%;
     justify-content: center;
     background-color: rgb(37, 71, 53);
@@ -120,6 +119,10 @@ a.endForm {
         padding: 10px;
         grid-template-columns: repeat(1, 1fr);
         gap: 0px;
+    }
+    .event-info p {
+        font-size: 15px;
+        margin: 0.35rem 0;
     }
 }
 /*-----The gallery section*/
@@ -161,7 +164,7 @@ a.endForm {
     display: block;
 }
 .gallery-card-content {
-    padding: 20px;
+    padding: 15px;
 }
 .gallery-card-content h3 {
     color: rgb(37, 71, 53);
@@ -176,6 +179,31 @@ a.endForm {
 .gallery-card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 900px) {
+    .gallery-section h2 {
+        font-size: 20px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 300px));
+        justify-content: center;
+    }
+    .gallery-card {
+        width: 100%;
+    }
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+    .gallery-card-content {
+        padding: 8px;
+    }
+    .gallery-card-content h3 {
+        font-size: 15px;
+    }
+    .gallery-card-content p {
+        font-size: 12px;
+    }
 }
 /* Contact form */
 .form-wrapper,
