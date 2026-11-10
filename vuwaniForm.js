@@ -11,39 +11,51 @@ const formMessage = document.getElementById("formMessage");
 const scriptURL = "https://script.google.com/macros/s/AKfycbyRu9PnUignA2-NrdLJnSRN81L5PnpLGeobYi28y3bv2cPLXPbn32qfYv_rJlUe2YYr/exec";
 
 //2. Function to show or hide personal information fields based on attendance selection
+
 function toggleAttendanceFields() {
     if (attendance.value === "yes") {
         attendingSection.hidden = false;
+        // Enable all personal information fields
+        attendingSection.querySelectorAll("input, select").forEach(field => {
+            field.disabled = false;
+        });
+        // Check whether student-specific fields should be displayed
+        toggleStudentFields();
     } else {
         attendingSection.hidden = true;
-        //clear personal information when not attending
+        // Clear and disable all personal information fields
         attendingSection.querySelectorAll("input, select").forEach(field => {
-            field.value = "";
+            if (field.type !== "radio") {
+                field.value = "";
+            }
             field.disabled = true;
         });
-
-        //clear student selection
+        // Clear student selection
         studentOptions.forEach(option => {
             option.checked = false;
         });
-        toggleStudentFields(); // Hide student fields if not attending
+        // Hide and disable student-specific fields
+        toggleStudentFields();
     }
 }
 
+
 //3. Function to show or hide student fields based on student selection
 function toggleStudentFields() {
-    const selectedStudent = document.querySelector('input[name="student"]:checked');
+    const selectedStudent = attendingSection.querySelector('input[name="student"]:checked');
     if (selectedStudent && selectedStudent.value === "yes") {
         studentSection.hidden = false;
-        //Enable student-specific fields
+        // Enable student-specific fields
         studentSection.querySelectorAll("input, select").forEach(field => {
             field.disabled = false;
         });
     } else {
         studentSection.hidden = true;
-        //disable and clear student-specific fields
+        // Disable and clear student-specific fields
         studentSection.querySelectorAll("input, select").forEach(field => {
-            field.value ="";
+            if (field.type !== "radio") {
+                field.value = "";
+            }
             field.disabled = true;
         });
     }
@@ -146,14 +158,12 @@ registrationForm.addEventListener("submit", async function(event) {
 });
 
 //7. Clear feedback when the form is reset
-registrationForm.addEventListener("reset", function() {
-    setTimeout(function() {
-        attendingSection.hidden = true;
-        studentSection.hidden = true;
-        //re-enable fields so they can be used again
-        registrationForm.querySelectorAll("input, select").forEach(field => {
-            field.disabled = false;
-        });
+
+registrationForm.addEventListener("reset", function () {
+    setTimeout(function () {
+        // Restore the correct initial form state
+        toggleAttendanceFields();
+        // Clear feedback message
         formMessage.textContent = "";
     }, 0);
 });
