@@ -8,6 +8,7 @@ const attendingSection = document.querySelector(".if-attending");
 const studentSection = document.querySelector(".if-student");
 const studentOptions = document.querySelectorAll('input[name="student"]');
 const formMessage = document.getElementById("formMessage");
+const scriptURL = "https://script.google.com/macros/s/AKfycbyRu9PnUignA2-NrdLJnSRN81L5PnpLGeobYi28y3bv2cPLXPbn32qfYv_rJlUe2YYr/exec";
 
 //2. Function to show or hide personal information fields based on attendance selection
 function toggleAttendanceFields() {
@@ -69,7 +70,7 @@ studentOptions.forEach(option => {
 });
 
 //6. handle form submission
-registrationForm.addEventListener("submit", function (event) {
+registrationForm.addEventListener("submit", async function(event) {
     event.preventDefault();
     // Check whether the form is valid
     if (!registrationForm.checkValidity()) {
@@ -108,10 +109,40 @@ registrationForm.addEventListener("submit", function (event) {
     }
     // Display the collected information in the console
     console.log("Registration Details:", registration);
-    // Display success feedback
-    formMessage.textContent =
-        "Form completed successfully! Your information has not yet been saved.";
-    formMessage.style.color = "green";
+    // linking to the apps script
+
+    try {
+        formMessage.textContent = "Submitting your registration...";
+        formMessage.style.color = "blue";
+
+        const response = await fetch(scriptURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(registration)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            formMessage.textContent =
+                "Registration submitted successfully!";
+            formMessage.style.color = "green";
+
+            console.log("Registration saved:", result);
+            registrationForm.reset();
+        } else {
+            throw new Error(result.message);
+        }
+
+    } catch (error) {
+        console.error("Submission error:", error);
+
+        formMessage.textContent =
+            "Something went wrong. Please try again.";
+        formMessage.style.color = "red";
+    }
 });
 
 //7. Clear feedback when the form is reset
