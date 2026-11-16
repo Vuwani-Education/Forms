@@ -125,7 +125,7 @@ registrationForm.addEventListener("submit", async function(event) {
     // Validate phone number only for attendees
     if (registration.attendance === "yes") {
         const phoneDigits = registration.phone.replace(/\D/g, "");
-        if (phoneDigits.length < 9 || phoneDigits.length > 12) {
+        if (phoneDigits.length < 9 || phoneDigits.length > 16) {
             formMessage.textContent = "Please enter a valid phone number.";
             formMessage.style.color = "red";
             return;
