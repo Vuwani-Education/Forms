@@ -9,6 +9,26 @@ const studentSection = document.querySelector(".if-student");
 const studentOptions = document.querySelectorAll('input[name="student"]');
 const formMessage = document.getElementById("formMessage");
 const scriptURL = "https://script.google.com/macros/s/AKfycbyRu9PnUignA2-NrdLJnSRN81L5PnpLGeobYi28y3bv2cPLXPbn32qfYv_rJlUe2YYr/exec";
+//for the success message
+const successPanel = document.getElementById("successPanel");
+const successText = document.getElementById("successText");
+const formIntro = document.getElementById("formIntro");
+const anotherResponse = document.getElementById("anotherResponse");
+
+//for the success message
+function showSuccessMessage(isAttending) {
+    successText.textContent = isAttending ? "Your Form has been successfully submitted. We are excited to see you on the 27th! Check your inbox for a confirmation email (and your spam folder)"
+    : "Thank you for letting us know. We hope to see you at a future event.";
+    registrationForm.hidden = true;
+    formIntro.hidden = true;
+    formMessage.textContent = "";
+    successPanel.hidden = false;
+}
+anotherResponse.addEventListener("click", function () {
+    successPanel.hidden = true;
+    registrationForm.hidden = false;
+    formIntro.hidden = false;
+});
 
 //2. Function to show or hide personal information fields based on attendance selection
 
@@ -138,12 +158,9 @@ registrationForm.addEventListener("submit", async function(event) {
         const result = await response.json();
 
         if (result.success) {
-            formMessage.textContent =
-                "Registration submitted successfully!";
-            formMessage.style.color = "green";
-
-            console.log("Registration saved:", result);
+            console.log("Registration Saved:", result);
             registrationForm.reset();
+            showSuccessMessage(registration.attendance === "yes");
         } else {
             throw new Error(result.message);
         }
