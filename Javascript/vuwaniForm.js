@@ -8,7 +8,7 @@ const attendingSection = document.querySelector(".if-attending");
 const studentSection = document.querySelector(".if-student");
 const studentOptions = document.querySelectorAll('input[name="student"]');
 const formMessage = document.getElementById("formMessage");
-const scriptURL = "https://script.google.com/macros/s/AKfycbyRu9PnUignA2-NrdLJnSRN81L5PnpLGeobYi28y3bv2cPLXPbn32qfYv_rJlUe2YYr/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxhvYXs15Z6cwg46yNaF7zFOePEtUQXblut9QcipZ2y7bY1kmor13uFSGZdVhwgF-eq/exec";
 //for the success message
 const successPanel = document.getElementById("successPanel");
 const successText = document.getElementById("successText");
