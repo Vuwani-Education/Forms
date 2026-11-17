@@ -266,11 +266,13 @@
                         <label for="phone">Phone Number:</label>
                         <input type="tel" id="phone" name="phone" required placeholder="+27 123 456 7890">
                         
-                        <label for="student">Are you a student?</label>
-                        <input type="radio" id="student-yes" name="student" value="yes" required>
-                        <label for="student-yes">Yes</label>
-                        <input type="radio" id="student-no" name="student" value="no" required>
-                        <label for="student-no">No</label>
+                        <div class="radio-group" role="radiogroup" aria-labelledby="studentLabel">
+                            <span id="studentLabel" class="group-label">Are you a student?</span>
+                            <input type="radio" id="student-yes" name="student" value="yes" required>
+                            <label for="student-yes">Yes</label>
+                            <input type="radio" id="student-no" name="student" value="no" required>
+                            <label for="student-no">No</label>
+                        </div>
                     
 
                         <div class="if-student" hidden>

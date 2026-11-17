@@ -412,3 +412,9 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
+.group-label {
+    display: block;
+    margin: 1rem 0 0.4rem;
+    color: #26352c;
+    font-weight: 600;
+}
