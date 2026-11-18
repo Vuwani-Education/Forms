@@ -17,61 +17,52 @@ body {
     align-items: center;
 }
 
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+
+
+.vuwani-logo a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+
 }
 
-.navbar a {
-    text-decoration: none;
-    font-size: 16px;
-}
-.nav-link a {
-    display: inline-block;
-    padding: 0.55rem 0.85rem;
-    border: 2px solid white;
-    border-radius: 0.35rem;
-    background-color: #254735;
-    color: white;
-    font-weight: 700;
-}
-.nav-link a:hover {
-    background-color: #1b3527;
-}
 .vuwani-logo {
     display: flex;
-    gap: 20px;
+    gap: 8px;
     padding: 10px;
     align-items: center;
 }
-.vuwani-logo h1 {
-    color: white;
-    font-size: 20px;
-}
+
 .afm-logo {
     display: flex;
-    gap: 20px;
+    gap: 8px;
     padding: 10px;
     align-items: center;
     justify-self: end;
 }
-.afm-logo h1 {
+.afm-logo a {
+    text-decoration: none;
     color:rgb(7, 114, 100);
     font-size: 20px;
 }
 /* for the navigation */
 @media screen and (max-width: 900px) {
     .navbar {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .vuwani-logo,
+    .afm-logo {
+        padding: 5px 5px;
     }
     .vuwani-logo {
         gap: 8px;
+        min-width: 0;
     }
-    .vuwani-logo h1 {
-        font-size: 12px;
+    .vuwani-logo h1,
+    .afm-logo h1 {
+        margin: 0;
+        font-size: inherit;
+        line-height: 1.2;
     }
     .vuwani-logo img {
         height: 35px;
@@ -79,22 +70,17 @@ body {
     }
     .afm-logo {
         gap: 8px;
-    }
-    .afm-logo h1 {
-        font-size: 12px;
+        min-width: 0;
     }
     .afm-logo img {
         height: 45px;
         width: auto;
     }
-    .nav-link a {
-        font-size: 14px;
+    .vuwani-logo a {
+        font-size: 13px;
     }
-    .nav-link {
-        display: flex;
-        justify-content: center;
-        flex-basis: 100%;
-        padding: 8px 10px 12px;
+    .afm-logo a {
+        font-size: 13px;
     }
 }
 /* for the heading and intro */
@@ -163,8 +149,12 @@ body {
 }
 @media screen and (max-width: 560px) {
     .event-info {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 13px;
         padding: 1rem;
+    }
+    .event-info dd {
+        font-size: 12px;
     }
 }
 /*-----The gallery section*/

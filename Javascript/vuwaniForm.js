@@ -8,7 +8,7 @@ const attendingSection = document.querySelector(".if-attending");
 const studentSection = document.querySelector(".if-student");
 const studentOptions = document.querySelectorAll('input[name="student"]');
 const formMessage = document.getElementById("formMessage");
-const scriptURL = "https://script.google.com/macros/s/AKfycbxhvYXs15Z6cwg46yNaF7zFOePEtUQXblut9QcipZ2y7bY1kmor13uFSGZdVhwgF-eq/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzZoDecWRzEaCgFhEiz13sIMDsWEjKsXwSxdRgkDeQsbk2jYQs_qvrmO9ppUdiuXR6UZQ/exec";
 //for the success message
 const successPanel = document.getElementById("successPanel");
 const successText = document.getElementById("successText");
@@ -125,7 +125,7 @@ registrationForm.addEventListener("submit", async function(event) {
     // Validate phone number only for attendees
     if (registration.attendance === "yes") {
         const phoneDigits = registration.phone.replace(/\D/g, "");
-        if (phoneDigits.length < 9 || phoneDigits.length > 16) {
+        if (phoneDigits.length < 9 || phoneDigits.length > 12) {
             formMessage.textContent = "Please enter a valid phone number.";
             formMessage.style.color = "red";
             return;
